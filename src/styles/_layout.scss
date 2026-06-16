@@ -1,16 +1,18 @@
-@use 'breakpoints' as *;
+@use 'breakpoints' as b;
 
 .container {
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 
-  @include tablet-up {
-    padding: 0 40px;
+  @media (min-width: b.$bp-tablet) {
+    max-width: b.$bp-tablet;
+    padding: 0 44px;
   }
 
-  @include desktop-up {
-    max-width: 1280px;
-    padding: 0 80px;
+  @media (min-width: b.$bp-desktop) {
+    max-width: b.$bp-desktop;
+    padding: 0 64px;
   }
 }
+

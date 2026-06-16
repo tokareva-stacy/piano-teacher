@@ -1,13 +1,6 @@
-@use '../breakpoints' as *;
+@use '../breakpoints' as b;
 
 .hero {
   font-size: 24px;
 
-  @include tablet-up {
-    font-size: 36px;
-  }
-
-  @include desktop-up {
-    font-size: 56px;
-  }
 }

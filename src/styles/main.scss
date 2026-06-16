@@ -1,15 +1,19 @@
-@forward 'breakpoints';
-@forward 'layout';
-@forward './variables';
-@forward './reset';
-@forward './typography';
-@forward './mixins';
-@forward './sections/hero';
-@forward './sections/for-whom';
-@forward './sections/about';
-@forward './sections/journey';
-@forward './sections/results';
-@forward './sections/pricing';
-@forward './sections/faq';
-@forward './sections/cta';
-@forward './sections/footer';
+// Базовые
+@use 'variables' as *;
+@use 'breakpoints' as *;
+@use 'reset';
+@use 'typography';
+@use 'mixins';
+@use 'layout';
+
+// Секции
+@use 'sections/header';
+@use 'sections/hero';
+@use 'sections/for-whom';
+@use 'sections/about';
+@use 'sections/journey';
+@use 'sections/results';
+@use 'sections/pricing';
+@use 'sections/faq';
+@use 'sections/cta';
+@use 'sections/footer';
