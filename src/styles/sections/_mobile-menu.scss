@@ -1,0 +1,134 @@
+@use '../variables' as v;
+@use '../mixins' as m;
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: flex;              // ← добавить
+  justify-content: flex-start;  // ← добавить
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__content {
+    padding: 20px 0;
+  }
+
+  &__panel {
+    width: 50%;
+    height: 100%;
+
+    background-color: v.$white;
+    position: relative;
+
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .header__cta {
+      display: flex;     
+      margin-top: 24px;
+      align-self: flex-end; 
+  }
+  }
+
+.mobile-menu.is-open .mobile-menu__panel {
+  transform: translateX(0);
+}
+  &__close {
+    position: absolute;
+    // top: 16px;
+    right: 24px;
+    padding: 8px 0;
+
+    display: none;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &-icon {
+    //   padding: 8px;
+      fill: v.$color-olive;
+      transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover {
+        fill: v.$color-text;
+      }
+    }
+  }
+
+  &.is-open &__close {
+    display: flex;
+  }
+
+  &__nav {
+    margin-top: 68px;
+    width: 100%;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    width: 100%;
+    text-align: right;
+  }
+
+  &__link {
+    display: block;
+    padding: 5px;
+
+    font-size: 14px;
+    line-height: 143%;
+    color: v.$color-text;
+    text-decoration: none;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      color: v.$color-olive;
+    }
+  }
+}
+.header__nav-link,
+.mobile-menu__link {
+  position: relative;
+
+  &.is-active {
+    color: v.$color-olive;
+    font-weight: 600;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: v.$color-olive;
+    }
+  }
+}

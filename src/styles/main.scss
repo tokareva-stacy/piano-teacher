@@ -1,6 +1,6 @@
 // Базовые
-@use 'variables' as *;
-@use 'breakpoints' as *;
+@use 'variables' as v;
+@use 'breakpoints' as b;
 @use 'reset';
 @use 'typography';
 @use 'mixins';
@@ -8,6 +8,7 @@
 
 // Секции
 @use 'sections/header';
+@use 'sections/mobile-menu';
 @use 'sections/hero';
 @use 'sections/for-whom';
 @use 'sections/about';

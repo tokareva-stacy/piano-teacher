@@ -6,8 +6,8 @@
     background: rgba(253, 249, 240, 0.9);
     &__inner {
         display: flex;
-        align-items: center; /* Вирівнювання по вертикалі */
-        justify-content: space-between; /* Розподіл простору між елементами */
+        align-items: center;
+        justify-content: space-between; 
         padding: 16px 0;
     }
     &__logo {
@@ -53,8 +53,6 @@
     &__burger-icon{
         display: block;
         fill:v.$color-olive;
-        color: v.$color-olive;
-        stroke: v.$color-olive;
         transition: v.$transition;
     }
 
